@@ -1,11 +1,11 @@
-BOUTIQUE VITRINE - DAKAR MOBILE
+BOUTIQUE VITRINE - SAALUM TECH
 1. PHOTOS : mettez les vraies photos des produits dans le dossier images/
    avec les noms exacts listés dans index.html (ex: iphone-17-pro-max.jpg).
    Tant qu'une photo manque, une illustration de secours s'affiche.
    Formats conseillés : JPG/WebP fond blanc ou transparent (PNG), carré, 800x800 px.
 2. PRIX / PRODUITS : ouvrez index.html, section "A MODIFIER" (PRODUCTS).
    Remplacez price:null par un nombre, ex: price:650000
-3. NOM : remplacez "Dakar Mobile" dans index.html.
+3. NOM : la boutique s'appelle "SAALUM TECH" (modifiable dans index.html).
 4. WHATSAPP : déjà configuré sur +221 76 014 93 51.
 5. DEPLOIEMENT : glissez le dossier sur netlify.com/drop, ou GitHub Pages,
    Vercel, Cloudflare Pages, ou un hébergement classique (dossier public_html).
