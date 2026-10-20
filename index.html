@@ -87,7 +87,7 @@ header .wrap{display:flex;align-items:center;gap:24px;height:72px}
   background:
     url('images/banner_Saaluma_tech.jpg') center/cover no-repeat,
     linear-gradient(160deg,#1A2B4C 0%,#101D36 58%,#16294a 100%);
-  padding:84px 0 96px}
+  padding:64px 0 76px}
 .hero::before{
   content:"SAALUM TECH";position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);
   font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,16vw,12rem);font-weight:600;
@@ -100,6 +100,7 @@ header .wrap{display:flex;align-items:center;gap:24px;height:72px}
     radial-gradient(700px 320px at 80% 110%, rgba(74,107,93,.28), transparent 65%)}
 .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
 .hero-mbanner{display:none}
+.hero-copy{min-width:0}
 .hero h1{font-size:clamp(2.4rem,5vw,4.2rem);font-weight:600}
 .hero h1 em{font-style:italic;color:#BFD3C8}
 .hero p.lead{color:#C6D2E2;margin:20px 0 30px;max-width:47ch;font-size:1.06rem}
@@ -297,18 +298,20 @@ footer .legal{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255
   .hero::after{background:
     repeating-linear-gradient(115deg, rgba(255,255,255,.026) 0 1px, transparent 1px 8px),
     radial-gradient(560px 280px at 85% 108%, rgba(74,107,93,.3), transparent 62%)}
-  .hero .wrap{grid-template-columns:1fr;gap:22px}
-  .hero-mbanner{display:none}
+  .hero .wrap{grid-template-columns:1fr;gap:18px}
+  .hero-mbanner{display:block;width:78%;max-width:320px;margin:0 auto 6px;aspect-ratio:2/3;object-fit:cover;
+    object-position:center 20%;border-radius:8px;border:1px solid rgba(255,255,255,.16);
+    box-shadow:0 16px 34px rgba(0,0,0,.4)}
   .hero .art{display:none}
-  .hero .eyebrow{margin-bottom:10px;font-size:.7rem;letter-spacing:.26em}
-  .hero h1{font-size:clamp(1.95rem,8.2vw,2.6rem);line-height:1.14}
-  .hero p.lead{font-size:.98rem;margin:14px 0 22px;max-width:none;color:#CBD6E4}
-  .hero .cta{flex-direction:column;gap:10px}
-  .hero .cta .btn{width:100%;min-height:52px;font-size:1rem}
-  .trust{gap:8px;margin-top:22px}
-  .trust span{font-size:.79rem;padding:8px 12px;flex:1 1 auto;text-align:center}
+  .hero .eyebrow{margin-bottom:8px;font-size:.66rem;letter-spacing:.24em}
+  .hero h1{font-size:clamp(1.7rem,7vw,2.1rem);line-height:1.16}
+  .hero p.lead{font-size:.92rem;margin:12px 0 18px;max-width:none;color:#CBD6E4}
+  .hero .cta{flex-direction:column;gap:8px}
+  .hero .cta .btn{width:100%;min-height:46px;font-size:.94rem;padding:10px 16px}
+  .trust{gap:7px;margin-top:18px}
+  .trust span{font-size:.74rem;padding:6px 10px;flex:1 1 auto;text-align:center}
 
-  .hero-mcar{display:block;margin-top:26px}
+  .hero-mcar{display:block;margin-top:20px}
   .hero-mcar .rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 18px 14px;margin:0 -18px}
   .hero-mcar .rail::-webkit-scrollbar{display:none}
@@ -339,7 +342,7 @@ footer .legal{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255
   .svc p{font-size:.94rem}
   .svc ul{gap:7px}
   .svc li{font-size:.9rem;padding-left:24px}
-  .svc .body .btn{margin-top:6px;width:100%;min-height:50px}
+  .svc .body .btn{margin-top:6px;width:100%;min-height:44px;font-size:.92rem}
   .svc-note{gap:8px;margin-top:16px}
   .svc-note span{font-size:.8rem;padding:8px 12px;flex:1 1 46%;text-align:center}
 
@@ -363,7 +366,7 @@ footer .legal{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255
   .card .ph{padding:14px}
   .card .body{padding:16px 16px 18px}
   .card h3{font-size:1.28rem}
-  .card .btn{min-height:50px;font-size:.95rem}
+  .card .btn{min-height:44px;font-size:.92rem}
 
   .why{margin-top:36px;padding:44px 0}
   .why .cols{grid-template-columns:1fr;gap:12px;margin-top:18px}
@@ -384,10 +387,10 @@ footer .legal{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255
     background:linear-gradient(180deg,rgba(16,29,54,.92),rgba(13,24,48,.99));
     backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
     border-top:1px solid rgba(255,255,255,.1);box-shadow:0 -10px 30px rgba(16,29,54,.3)}
-  .mobilebar .btn{min-height:50px;font-size:1rem;width:100%}
-  .mobilebar .top{display:grid;place-items:center;width:50px;height:50px;border-radius:4px;
+  .mobilebar .btn{min-height:46px;font-size:.94rem;width:100%}
+  .mobilebar .top{display:grid;place-items:center;width:46px;height:46px;border-radius:4px;
     background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);
-    color:#fff;text-decoration:none;font-size:1.2rem;line-height:1}
+    color:#fff;text-decoration:none;font-size:1.1rem;line-height:1}
 }
 
 @media(max-width:400px){
@@ -427,7 +430,8 @@ footer .legal{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255
   <a class="btn" data-wa="Bonjour, je voudrais des informations sur vos produits." href="#">Écrire sur WhatsApp</a>
 </nav></header>
 <section class="hero" aria-label="Accueil"><div class="wrap">
-<div>
+<img class="hero-mbanner" src="images/banner_Saaluma_tech.jpg" alt="Saalum Tech – boutique tech premium à Dakar" width="896" height="1195" fetchpriority="high" decoding="async">
+<div class="hero-copy">
 <span class="eyebrow light">Boutique premium · Dakar</span>
 <h1>Les derniers smartphones et ordinateurs, <em>livrés chez vous.</em></h1>
 <p class="lead">Appareils neufs, scellés et garantis. Choisissez un modèle, écrivez-nous sur WhatsApp : nous répondons avec le prix, la disponibilité et un conseil personnalisé.</p>
@@ -611,30 +615,42 @@ const PRODUCTS = [
 // ========================
 
 const wa = t => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t)}`;
-// Lien absolu vers la photo du produit (secours si le partage natif n'est pas dispo)
+// Lien absolu vers la photo du produit
 const photo = p => new URL(`images/${p.img}`, location.href).href;
 const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const msgFor = p =>`Bonjour Saalum Tech, je suis intéressé(e) par le ${p.b} ${p.n} (${p.s}). Est-il disponible ?`;
 
-// Commande : sur mobile, on PARTAGE la photo du produit (elle part dans le chat WhatsApp).
-// Sinon, on retombe sur un message texte contenant le lien de la photo.
-async function commander(ev, p){
-  const msg=`Bonjour Saalum Tech, je suis intéressé(e) par le ${p.b} ${p.n} (${p.s}). Est-il disponible ?`;
+async function fetchFile(p){
   const url=photo(p);
-  if(!(navigator.canShare && window.File)) return; // laisse le lien <a> faire son travail
+  const r=await fetch(url);
+  if(!r.ok) throw 0;
+  const blob=await r.blob();
+  const type=blob.type||'image/jpeg';
+  const ext=(type.split('/')[1]||'jpg').replace('jpeg','jpg').replace('svg+xml','png');
+  return {file:new File([blob], `${p.img.replace(/\.[^.]+$/, '')}.${ext}`, {type}), url};
+}
+
+// Commande : redirige directement vers le WhatsApp du vendeur avec la photo du produit.
+// 1) Android / iOS : partage natif du fichier -> WhatsApp reçoit l'image en pièce jointe.
+// 2) Desktop : on ouvre wa.me (conversation vendeur) ET on copie l'image dans le presse-papiers
+//    pour un collage immédiat (Ctrl+V) ; le message contient déjà le lien de la photo.
+async function commander(ev, p){
+  const msg=msgFor(p);
   ev.preventDefault();
+  const canFiles = navigator.canShare && window.File && window.fetch;
   try{
-    const r=await fetch(url);
-    if(!r.ok) throw 0;
-    const blob=await r.blob();
-    const type=blob.type||'image/jpeg';
-    const ext=(type.split('/')[1]||'jpg').replace('jpeg','jpg');
-    const file=new File([blob], `${p.img.replace(/\.[^.]+$/, '')}.${ext}`, {type});
-    if(navigator.canShare({files:[file]})){
+    const {file,url}=await fetchFile(p);
+    if(canFiles && navigator.canShare({files:[file]})){
       await navigator.share({files:[file], text:msg});
       return;
     }
-  }catch(_){}
-  window.location.href=wa(msg+`\nPhoto : ${url}`);
+    if(navigator.clipboard && window.ClipboardItem){
+      try{ await navigator.clipboard.write([new ClipboardItem({[file.type]:file})]); }catch(_){}
+    }
+    window.open(wa(msg+`\n\nPhoto : ${url}`),'_blank','noopener');
+  }catch(_){
+    window.open(wa(msg+`\n\nPhoto : ${photo(p)}`),'_blank','noopener');
+  }
 }
 
 // Illustration de secours si la photo n'est pas encore ajoutée
@@ -658,7 +674,7 @@ function render(cat="Tous"){
     return `<article class="card"><div class="ph">${imgTag(p)}</div><div class="body">
       ${p.tag?`<span class="tag">${p.tag}</span>`:''}<span class="brand">${esc(p.b)}</span><h3>${esc(p.n)}</h3>
       <p class="spec">${esc(p.s)}</p><p class="price">${price}</p>
-      <a class="btn sm" href="${wa(`Bonjour Saalum Tech, je suis intéressé(e) par le ${p.b} ${p.n}. Est-il disponible ?`)}" onclick="commander(event, PRODUCTS[${i}])" target="_blank" rel="noopener">Commander sur WhatsApp</a></div></article>`}).join('');
+      <a class="btn sm" href="${wa(msgFor(p))}" onclick="commander(event, PRODUCTS[${i}])" target="_blank" rel="noopener">Commander sur WhatsApp</a></div></article>`}).join('');
 }
 chips.addEventListener('click',e=>{const c=e.target.dataset.c;if(c)render(c)});
 render();
@@ -672,7 +688,7 @@ document.getElementById('heroCar').innerHTML=
   '<div class="rail">'+
     [0,10,3,1,4].map(i=>{
       const p=PRODUCTS[i];
-      return `<a class="item" href="${wa(`Bonjour Saalum Tech, je suis intéressé(e) par le ${p.b} ${p.n}. Est-il disponible ?`)}" onclick="commander(event, PRODUCTS[${i}])" target="_blank" rel="noopener">
+      return `<a class="item" href="${wa(msgFor(p))}" onclick="commander(event, PRODUCTS[${i}])" target="_blank" rel="noopener">
         <img src="images/${p.img}" alt="${esc(p.b+' '+p.n)}" loading="lazy" onerror="this.onerror=null;this.src='${fallback(p).replace(/'/g,"%27")}'">
         <b>${esc(p.n)}</b><small>${esc(p.b)} · Commander</small></a>`;
     }).join('')+
