@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SAALUM TECH – Smartphones et ordinateurs de prestige</title>
-<meta name="description" content="iPhone, Samsung, Google Pixel, MacBook et PC portables neufs et garantis. Boutique tech premium à Dakar. Commandez sur WhatsApp.">
+<title>SAALUM TECH – Smartphones, ordinateurs & services premium à Dakar</title>
+<meta name="description" content="iPhone, Samsung, Google Pixel, MacBook et PC portables neufs et garantis. Impression 3D et flocage professionnel. Boutique tech premium à Dakar, commande sur WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#1A2B4C;
@@ -16,59 +16,82 @@
   --sage:#4A6B5D;
   --sage-d:#3A5549;
   --sage-l:#6E8C7F;
-  --mist:#F2F4F3;
-  --card:rgba(255,255,255,.78);
+  --mist:#F3F5F4;
+  --card:rgba(255,255,255,.82);
   --mute:#5D6B7E;
   --line:rgba(26,43,76,.12);
-  --glass:rgba(255,255,255,.08);
-  --glass-l:rgba(255,255,255,.14);
-  --alu-a:#F6F7F8;
-  --alu-b:#E4E8EB;
+  --ph-bg:#F0F2F4;
+  --shadow-s:0 1px 2px rgba(16,29,54,.05), 0 12px 28px rgba(16,29,54,.07);
+  --shadow-m:0 2px 4px rgba(16,29,54,.06), 0 22px 46px rgba(16,29,54,.12);
+  --shadow-l:0 30px 70px rgba(16,29,54,.22);
 }
 *{box-sizing:border-box;margin:0}
-body{font-family:'Manrope',system-ui,sans-serif;background:
-  radial-gradient(1100px 500px at 85% -5%, rgba(74,107,93,.12), transparent 60%),
-  var(--mist);
-  color:var(--ink);line-height:1.55}
-h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.12;font-weight:600;letter-spacing:.01em}
-a{color:inherit}
-.wrap{max-width:1160px;margin:auto;padding:0 22px}
-
-header{
-  position:sticky;top:0;z-index:5;color:#fff;
-  background:linear-gradient(180deg,rgba(16,29,54,.96),rgba(26,43,76,.94));
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,.09);
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{
+  font-family:'Manrope',system-ui,sans-serif;color:var(--ink);line-height:1.6;
+  background:
+    radial-gradient(900px 520px at 100% -5%, rgba(74,107,93,.12), transparent 62%),
+    radial-gradient(760px 420px at -10% 108%, rgba(26,43,76,.09), transparent 58%),
+    repeating-linear-gradient(90deg, rgba(26,43,76,.018) 0 1px, transparent 1px 96px),
+    linear-gradient(180deg,#F4F6F5 0%, #E9EEF1 100%);
+  background-attachment:fixed;
 }
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
-.logo{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.45rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;display:flex;gap:.45em;align-items:baseline}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.14;font-weight:600;letter-spacing:.01em}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1160px;margin:auto;padding:0 22px}
+section{position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.76rem;letter-spacing:.3em;text-transform:uppercase;color:var(--sage);font-weight:700;margin-bottom:14px}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--sage);opacity:.6}
+.eyebrow.light{color:#A9C0B5}
+.section-head{max-width:640px;margin-bottom:38px}
+.section-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}
+.section-head p{color:var(--mute);margin-top:12px;font-size:1.02rem}
+
+/* ---------- HEADER ---------- */
+header{
+  position:sticky;top:0;z-index:50;color:#fff;
+  background:linear-gradient(180deg,rgba(16,29,54,.97),rgba(26,43,76,.95));
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  transition:box-shadow .25s ease}
+header.scrolled{box-shadow:0 12px 34px rgba(16,29,54,.28)}
+header .wrap{display:flex;align-items:center;gap:24px;height:72px}
+.logo{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.4rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;display:flex;gap:.45em;align-items:baseline;margin-right:auto}
 .logo b{font-weight:600}
 .logo span{color:var(--sage-l);font-size:.85em;letter-spacing:.3em}
+.nav{display:flex;gap:26px;align-items:center}
+.nav a{font-size:.9rem;font-weight:600;letter-spacing:.04em;text-decoration:none;color:#D7E0EC;padding:6px 2px;border-bottom:1px solid transparent;transition:color .15s ease,border-color .15s ease}
+.nav a:hover{color:#fff;border-color:var(--sage-l)}
 
+/* ---------- BOUTONS ---------- */
 .btn{
-  display:inline-flex;align-items:center;gap:9px;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;
   background:linear-gradient(180deg,var(--sage-l),var(--sage));
   color:#fff;font-weight:600;text-decoration:none;
-  padding:13px 26px;border-radius:2px;border:1px solid rgba(255,255,255,.14);
-  cursor:pointer;font-size:.98rem;font-family:inherit;letter-spacing:.04em;
+  padding:12px 26px;border-radius:3px;border:1px solid rgba(255,255,255,.14);
+  cursor:pointer;font-size:.96rem;font-family:inherit;letter-spacing:.04em;
   box-shadow:0 10px 24px rgba(74,107,93,.28), inset 0 1px 0 rgba(255,255,255,.25);
-  transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-}
-.btn:hover{background:linear-gradient(180deg,var(--sage),var(--sage-d));transform:translateY(-1px);box-shadow:0 14px 28px rgba(74,107,93,.34), inset 0 1px 0 rgba(255,255,255,.25)}
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
+.btn:hover{background:linear-gradient(180deg,var(--sage),var(--sage-d));transform:translateY(-1px);box-shadow:0 14px 30px rgba(74,107,93,.36), inset 0 1px 0 rgba(255,255,255,.25)}
+.btn:active{transform:translateY(0)}
 .btn:focus-visible,.chip:focus-visible,a:focus-visible{outline:2px solid var(--sage-l);outline-offset:3px}
-.btn.sm{padding:9px 16px;font-size:.86rem;letter-spacing:.06em}
-.btn.ghost{background:var(--glass);border:1px solid rgba(255,255,255,.22);box-shadow:none}
-.btn.ghost:hover{background:var(--glass-l)}
+.btn.sm{padding:10px 18px;font-size:.87rem;letter-spacing:.06em;min-height:40px}
+.btn.ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.24);box-shadow:none}
+.btn.ghost:hover{background:rgba(255,255,255,.16)}
+.btn.outline{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.btn.outline:hover{border-color:var(--sage);color:var(--sage-d);background:rgba(74,107,93,.06)}
 
+/* ---------- HERO ---------- */
 .hero{position:relative;overflow:hidden;color:#fff;
   background:
     url('images/banner_Saaluma_tech.jpg') center/cover no-repeat,
     linear-gradient(160deg,#1A2B4C 0%,#101D36 58%,#16294a 100%);
-  padding:78px 0 88px}
+  padding:84px 0 96px}
 .hero::before{
-  content:"SAALUM TECH";position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);
+  content:"SAALUM TECH";position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);
   font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,16vw,12rem);font-weight:600;
-  letter-spacing:.18em;white-space:nowrap;color:rgba(255,255,255,.045);pointer-events:none;user-select:none}
+  letter-spacing:.18em;white-space:nowrap;color:rgba(255,255,255,.05);pointer-events:none;user-select:none}
 .hero::after{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:
@@ -76,109 +99,203 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
     repeating-linear-gradient(115deg, rgba(255,255,255,.028) 0 1px, transparent 1px 7px),
     radial-gradient(700px 320px at 80% 110%, rgba(74,107,93,.28), transparent 65%)}
 .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
-.hero .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:#A9C0B5;margin-bottom:22px}
-.hero .eyebrow::before{content:"";width:34px;height:1px;background:var(--sage-l)}
-.hero h1{font-size:clamp(2.4rem,5vw,4.2rem);font-weight:600;letter-spacing:.005em}
+.hero-mbanner{display:none}
+.hero h1{font-size:clamp(2.4rem,5vw,4.2rem);font-weight:600}
 .hero h1 em{font-style:italic;color:#BFD3C8}
-.hero p{color:#C6D2E2;margin:20px 0 30px;max-width:47ch;font-size:1.06rem}
+.hero p.lead{color:#C6D2E2;margin:20px 0 30px;max-width:47ch;font-size:1.06rem}
 .hero .cta{display:flex;gap:14px;flex-wrap:wrap}
-.trust{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.trust{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
 .trust span{
-  background:var(--glass);border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-  padding:9px 16px;border-radius:2px;font-size:.86rem;color:#D7E0EC;letter-spacing:.03em}
+  padding:9px 16px;border-radius:3px;font-size:.86rem;color:#D7E0EC;letter-spacing:.03em}
 .trust b{color:#BFD3C8;font-weight:600}
-
 .hero .art{display:flex;gap:16px;justify-content:center;align-items:flex-end}
 .hero .art .frame{
   background:linear-gradient(160deg,rgba(255,255,255,.13),rgba(255,255,255,.04));
   border:1px solid rgba(255,255,255,.16);border-radius:6px;padding:10px;
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   box-shadow:0 26px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.22)}
-.hero .art img{display:block;width:100%;height:100%;object-fit:contain;border-radius:3px;
-  background:linear-gradient(180deg,var(--alu-a),var(--alu-b))}
+.hero .art img{display:block;width:100%;height:100%;object-fit:contain;border-radius:3px;background:var(--ph-bg)}
 .hero .art .frame:nth-child(1){width:34%;aspect-ratio:3/4}
 .hero .art .frame:nth-child(2){width:44%;aspect-ratio:4/3;margin-bottom:14px}
 .hero .art .frame:nth-child(3){width:34%;aspect-ratio:3/4}
 
-main{padding:56px 0 28px}
-.bar{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between;margin-bottom:28px}
-.bar h2{font-size:2.3rem}
-.bar .sub{color:var(--mute);font-size:.92rem;letter-spacing:.14em;text-transform:uppercase}
+/* ---------- SERVICES ---------- */
+.services{padding:84px 0 76px}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.svc{
+  position:relative;border-radius:8px;overflow:hidden;color:#fff;
+  background:linear-gradient(165deg,#223759 0%,#152745 55%,#101D36 100%);
+  border:1px solid rgba(255,255,255,.09);
+  box-shadow:var(--shadow-l);
+  display:flex;flex-direction:column;
+  transition:transform .25s ease, box-shadow .25s ease}
+.svc:hover{transform:translateY(-4px);box-shadow:0 38px 80px rgba(16,29,54,.3)}
+.svc .media{display:grid;grid-template-columns:2fr 1fr;gap:4px;height:250px;padding:4px;background:rgba(255,255,255,.06)}
+.svc .media img{width:100%;height:100%;object-fit:cover;display:block;border-radius:4px;
+  filter:saturate(.96) contrast(1.02);transition:transform .5s ease}
+.svc:hover .media img{transform:scale(1.03)}
+.svc .media .side{display:grid;grid-template-rows:1fr;gap:4px}
+.svc .body{padding:26px 26px 28px;display:flex;flex-direction:column;gap:12px;flex:1}
+.svc .badge{
+  position:absolute;top:18px;left:18px;z-index:2;
+  background:rgba(16,29,54,.72);border:1px solid rgba(255,255,255,.2);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:#D9E5DE;padding:7px 12px;border-radius:3px}
+.svc h3{font-size:1.75rem}
+.svc p{color:#C2D0E0;font-size:.98rem}
+.svc ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin:4px 0 6px}
+.svc li{position:relative;padding-left:26px;font-size:.93rem;color:#D7E0EC}
+.svc li::before{
+  content:"";position:absolute;left:0;top:.45em;width:14px;height:8px;
+  border-left:2px solid var(--sage-l);border-bottom:2px solid var(--sage-l);
+  transform:rotate(-45deg)}
+.svc .body .btn{margin-top:auto;align-self:flex-start}
+.svc-note{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.svc-note span{
+  background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:3px;
+  padding:9px 16px;font-size:.88rem;color:var(--mute);font-weight:600}
+.svc-note b{color:var(--ink)}
+
+/* ---------- BOUTIQUE ---------- */
+.boutique{padding:24px 0 40px}
+.bar{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between;margin-bottom:30px}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{
-  border:1px solid var(--line);background:rgba(255,255,255,.6);color:var(--ink);
-  padding:9px 20px;border-radius:2px;font:inherit;font-weight:600;font-size:.88rem;
-  letter-spacing:.06em;cursor:pointer;transition:all .15s ease}
+  border:1px solid var(--line);background:rgba(255,255,255,.72);color:var(--ink);
+  padding:10px 20px;border-radius:3px;font:inherit;font-weight:600;font-size:.88rem;
+  letter-spacing:.05em;cursor:pointer;min-height:42px;transition:all .15s ease}
 .chip:hover{border-color:var(--sage);color:var(--sage-d)}
 .chip[aria-pressed=true]{background:linear-gradient(180deg,var(--ink-soft),var(--ink));color:#fff;border-color:var(--ink)}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:22px}
 .card{
-  background:var(--card);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;
+  background:var(--card);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;
   border:1px solid var(--line);
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  box-shadow:0 1px 2px rgba(16,29,54,.05), 0 14px 34px rgba(16,29,54,.07);
-  transition:transform .18s ease, box-shadow .18s ease}
-.card:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(16,29,54,.06), 0 22px 46px rgba(16,29,54,.13)}
+  box-shadow:var(--shadow-s);
+  transition:transform .2s ease, box-shadow .2s ease;
+  animation:pop .45s ease both}
+.card:nth-child(2){animation-delay:.04s}.card:nth-child(3){animation-delay:.08s}
+.card:nth-child(4){animation-delay:.12s}.card:nth-child(5){animation-delay:.16s}
+.card:nth-child(6){animation-delay:.2s}
+@keyframes pop{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-m)}
 .card .ph{
-  aspect-ratio:1;display:grid;place-items:center;padding:20px;
+  aspect-ratio:1;display:grid;place-items:center;padding:18px;
   background:
-    repeating-linear-gradient(125deg, rgba(26,43,76,.025) 0 1px, transparent 1px 6px),
-    linear-gradient(165deg,var(--alu-a),var(--alu-b));
+    radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,.9), transparent 60%),
+    repeating-linear-gradient(125deg, rgba(26,43,76,.02) 0 1px, transparent 1px 7px),
+    var(--ph-bg);
   border-bottom:1px solid var(--line)}
-.card img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 12px 18px rgba(16,29,54,.16))}
+.card img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 14px 18px rgba(16,29,54,.14))}
 .card .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
-.brand{font-size:.74rem;color:var(--mute);font-weight:600;letter-spacing:.22em;text-transform:uppercase}
-.card h3{font-size:1.35rem;font-weight:600}
+.brand{font-size:.72rem;color:var(--mute);font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.card h3{font-size:1.32rem}
 .spec{font-size:.9rem;color:var(--mute);flex:1}
-.price{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;letter-spacing:.02em;margin:8px 0 12px}
+.price{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;margin:8px 0 12px}
 .tag{
   display:inline-block;background:rgba(74,107,93,.12);color:var(--sage-d);
   border:1px solid rgba(74,107,93,.28);
-  font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  padding:4px 10px;border-radius:2px;width:max-content}
-.card .btn{width:100%;justify-content:center}
+  font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  padding:4px 10px;border-radius:3px;width:max-content}
+.card .btn{width:100%}
 
-.why{margin-top:56px;padding:56px 0;border-top:1px solid var(--line);
-  background:linear-gradient(180deg,rgba(255,255,255,.65),rgba(255,255,255,0))}
+/* ---------- POURQUOI ---------- */
+.why{margin-top:56px;padding:60px 0;border-top:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,.66),rgba(255,255,255,.15))}
 .why .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px;margin-top:26px}
-.why .col{border-top:1px solid var(--line);padding-top:18px}
+.why .col{background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:8px;padding:24px;
+  transition:transform .2s ease, box-shadow .2s ease}
+.why .col:hover{transform:translateY(-3px);box-shadow:var(--shadow-s)}
 .why h3{font-size:1.3rem;margin-bottom:6px}
-.why p{color:var(--mute);font-size:.95rem}
-.why .num{font-family:'Cormorant Garamond',serif;color:var(--sage);font-size:.95rem;letter-spacing:.2em;display:block;margin-bottom:10px}
+.why p{color:var(--mute);font-size:.94rem}
+.why .num{font-family:'Cormorant Garamond',serif;color:var(--sage);font-size:1rem;letter-spacing:.22em;display:block;margin-bottom:12px;font-weight:700}
 
-footer{color:#C6D2E2;padding:44px 0;text-align:center;
-  background:linear-gradient(180deg,#16294a,#101D36);border-top:1px solid rgba(255,255,255,.08)}
-footer .mark{font-family:'Cormorant Garamond',serif;letter-spacing:.28em;text-transform:uppercase;color:#fff;font-size:1.1rem;margin-bottom:10px}
-footer a{color:#BFD3C8;text-decoration:none;border-bottom:1px solid rgba(191,211,200,.35)}
-footer a:hover{color:#fff}
+/* ---------- FOOTER ---------- */
+footer{color:#C6D2E2;padding:52px 0 40px;
+  background:linear-gradient(180deg,#16294a,#0D1830);border-top:1px solid rgba(255,255,255,.08)}
+footer .grid-f{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;align-items:start}
+footer .mark{font-family:'Cormorant Garamond',serif;letter-spacing:.26em;text-transform:uppercase;color:#fff;font-size:1.15rem;margin-bottom:10px}
+footer h4{font-family:'Manrope';font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:#8FA69B;margin-bottom:12px;font-weight:700}
+footer a{color:#C6D2E2;text-decoration:none;display:inline-block;padding:3px 0;border-bottom:1px solid transparent}
+footer a:hover{color:#fff;border-color:rgba(191,211,200,.5)}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+footer .legal{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);font-size:.84rem;color:#8FA0B5}
+.fab{position:fixed;right:20px;bottom:20px;z-index:60;box-shadow:0 16px 40px rgba(16,29,54,.4)}
 
-.fab{position:fixed;right:20px;bottom:20px;z-index:10}
+/* ---------- FILM ---------- */
+.film{padding:18px 0 70px}
+.film-frame{
+  position:relative;border-radius:10px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.12);background:#0D1830;
+  box-shadow:var(--shadow-l)}
+.film-frame::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+  border-radius:10px;box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
+.film-frame video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+.film-caption{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.film-caption span{font-size:.86rem;color:var(--mute);background:rgba(255,255,255,.7);
+  border:1px solid var(--line);border-radius:3px;padding:8px 14px;font-weight:600}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:960px){
+  .svc-grid{grid-template-columns:1fr}
+  footer .grid-f{grid-template-columns:1fr 1fr}
+}
 @media(max-width:820px){
-  .hero{padding:56px 0 64px;background-position:center top}
-  .hero::after{background:linear-gradient(180deg, rgba(16,29,54,.72) 0%, rgba(16,29,54,.92) 42%, rgba(16,29,54,.96) 100%)}
-  .hero .wrap{grid-template-columns:1fr;gap:34px}
-  .hero .art{order:-1}
+  .hero{padding:40px 0 56px;
+    background:linear-gradient(160deg,#1A2B4C 0%,#101D36 58%,#16294a 100%)}
+  .hero::before{display:none}
+  .hero::after{background:
+    repeating-linear-gradient(115deg, rgba(255,255,255,.028) 0 1px, transparent 1px 7px),
+    radial-gradient(600px 300px at 80% 110%, rgba(74,107,93,.3), transparent 65%)}
+  .hero .wrap{grid-template-columns:1fr;gap:26px}
+  .hero-mbanner{display:block;width:100%;aspect-ratio:1584/672;object-fit:cover;
+    border-radius:8px;border:1px solid rgba(255,255,255,.16);
+    box-shadow:0 24px 50px rgba(0,0,0,.45)}
+  .hero .art{display:none}
+  .nav{display:none}
   .bar h2{font-size:1.9rem}
 }
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media(max-width:560px){
+  footer .grid-f{grid-template-columns:1fr}
+  .svc .media{height:200px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .reveal{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap">
-<a class="logo" href="#"><b>SAALUM</b><span>TECH</span></a>
+
+<header id="top"><div class="wrap">
+<a class="logo" href="#top"><b>SAALUM</b><span>TECH</span></a>
+<nav class="nav" aria-label="Navigation principale">
+  <a href="#services">Services</a>
+  <a href="#boutique">Boutique</a>
+  <a href="#film">Vidéo</a>
+  <a href="#pourquoi">Pourquoi nous</a>
+  <a href="#contact">Contact</a>
+</nav>
 <a class="btn sm ghost" data-wa="Bonjour, je voudrais des informations sur vos produits." href="#">Écrire sur WhatsApp</a>
 </div></header>
 
-<section class="hero"><div class="wrap">
+<section class="hero" aria-label="Accueil"><div class="wrap">
 <div>
-<span class="eyebrow">Boutique premium · Dakar</span>
+<span class="eyebrow light">Boutique premium · Dakar</span>
 <h1>Les derniers smartphones et ordinateurs, <em>livrés chez vous.</em></h1>
-<p>Appareils neufs, scellés et garantis. Choisissez un modèle, écrivez-nous sur WhatsApp : nous répondons avec le prix, la disponibilité et un conseil personnalisé.</p>
+<p class="lead">Appareils neufs, scellés et garantis. Choisissez un modèle, écrivez-nous sur WhatsApp : nous répondons avec le prix, la disponibilité et un conseil personnalisé.</p>
 <div class="cta">
 <a class="btn" data-wa="Bonjour, je cherche un téléphone ou un ordinateur. Pouvez-vous m'aider ?" href="#">Discuter sur WhatsApp</a>
-<a class="btn ghost" href="#produits">Voir la collection</a>
+<a class="btn ghost" href="#boutique">Voir la collection</a>
 </div>
 <div class="trust">
 <span><b>Neuf</b> et scellé</span>
@@ -187,33 +304,134 @@ footer a:hover{color:#fff}
 <span><b>Paiement</b> à la livraison possible</span>
 </div>
 </div>
-<div class="art" id="heroArt"></div>
+<div class="art" id="heroArt" aria-hidden="true"></div>
+</div>
+<img class="hero-mbanner" src="images/banner_Saaluma_tech.jpg" alt="Saalum Tech – boutique tech premium à Dakar" width="1584" height="672" loading="eager" decoding="async">
+</section>
+
+<section class="services" id="services"><div class="wrap">
+<div class="section-head reveal">
+<span class="eyebrow">Atelier de personnalisation</span>
+<h2>Impression 3D & flocage professionnel</h2>
+<p>Prototypes, pièces de rechange, cadeaux, uniformes d'entreprise : notre atelier réalise vos projets avec un rendu propre, durable et livré rapidement à Dakar.</p>
+</div>
+
+<div class="svc-grid">
+<article class="svc reveal">
+  <span class="badge">Atelier 3D</span>
+  <div class="media">
+    <img src="images/svc-impression-3d.jpg" alt="Impression 3D en cours d'une pièce en plastique" loading="lazy">
+    <div class="side"><img src="images/svc-3d-printer.jpg" alt="Imprimante 3D professionnelle" loading="lazy"></div>
+  </div>
+  <div class="body">
+    <h3>Impression 3D</h3>
+    <p>De l'idée à la pièce finale : impression FDM haute précision, plusieurs matières et finitions.</p>
+    <ul>
+      <li>Prototypes et pièces sur mesure (PLA, PETG, ABS, résine)</li>
+      <li>Dépannage : supports, adaptateurs, pièces introuvables</li>
+      <li>Cadeaux personnalisés, figurines, portes-clés, objets connectés</li>
+      <li>Fichier fourni ou modélisation sur demande</li>
+    </ul>
+    <a class="btn" data-wa="Bonjour, je souhaite un devis pour une impression 3D (objet, pièce ou prototype). Pouvez-vous m'aider ?" href="#">Demander un devis 3D</a>
+  </div>
+</article>
+
+<article class="svc reveal">
+  <span class="badge">Textile & objets</span>
+  <div class="media">
+    <img src="images/svc-flocage.jpg" alt="Flocage d'un t-shirt avec une presse à chaud" loading="lazy">
+    <div class="side"><img src="images/svc-flocage-press.jpg" alt="Presse à chaleur professionnelle" loading="lazy"></div>
+  </div>
+  <div class="body">
+    <h3>Flocage professionnel</h3>
+    <p>Marquage textile net et durable pour entreprises, écoles, équipes et événements.</p>
+    <ul>
+      <li>T-shirts, sweats, vestes, casquettes, sacs</li>
+      <li>Floc, vinyle, broderie et transfert haute qualité</li>
+      <li>Petites et grandes quantités, délais rapides</li>
+      <li>Logo de votre entreprise ou création sur demande</li>
+    </ul>
+    <a class="btn" data-wa="Bonjour, je souhaite un devis pour un flocage professionnel (vêtements, logo, textile)." href="#">Demander un devis flocage</a>
+  </div>
+</article>
+</div>
+
+<div class="svc-note reveal">
+<span><b>Devis gratuit</b> · réponse sous 2 h</span>
+<span><b>Délais</b> · 24 à 72 h selon le projet</span>
+<span><b>Quantités</b> · de 1 à 1 000+ pièces</span>
+<span><b>Retrait</b> · Dakar, ou livraison sur demande</span>
+</div>
 </div></section>
 
-<main><div class="wrap" id="produits">
-<div class="bar">
+<section class="film" id="film"><div class="wrap">
+<div class="section-head reveal">
+<span class="eyebrow">Saalum Tech en images</span>
+<h2>Notre atelier, en 30 secondes</h2>
+<p>Un aperçu de notre univers : produits premium, impression 3D et flocage professionnel.</p>
+</div>
+<div class="film-frame reveal">
+  <video controls muted loop playsinline preload="metadata" poster="images/banner_Saaluma_tech.jpg">
+    <source src="images/Commercial_storyboard_sequence_.mp4" type="video/mp4">
+    Votre navigateur ne prend pas en charge la vidéo. <a href="images/Commercial_storyboard_sequence_.mp4">Télécharger la vidéo</a>.
+  </video>
+</div>
+<div class="film-caption reveal">
+<span>Vidéo commerciale Saalum Tech</span>
+<span>Son disponible en appuyant sur l'icône volume</span>
+</div>
+</div></section>
+
+<main>
+<section class="boutique" id="boutique"><div class="wrap">
+<div class="bar reveal">
 <div>
-<span class="sub">Sélection</span>
+<span class="eyebrow">Sélection</span>
 <h2>Nos produits</h2>
 </div>
 <div class="chips" id="chips" role="group" aria-label="Filtrer par catégorie"></div>
 </div>
 <div class="grid" id="grid"></div>
 
-<section class="why">
-<h2>Acheter chez Saalum Tech</h2>
+<section class="why" id="pourquoi">
+<div class="section-head reveal">
+<span class="eyebrow">L'expérience Saalum</span>
+<h2>Pourquoi acheter chez nous</h2>
+</div>
 <div class="cols">
-<div class="col"><span class="num">01</span><h3>Produits d'origine</h3><p>Marques officielles, boîte scellée, numéro de série vérifiable à la livraison.</p></div>
-<div class="col"><span class="num">02</span><h3>Compatible Afrique de l'Ouest</h3><p>Modèles avec double SIM / eSIM et bandes réseau adaptées au Sénégal.</p></div>
-<div class="col"><span class="num">03</span><h3>Conseil direct</h3><p>Vous parlez à une vraie personne sur WhatsApp, pas à un formulaire.</p></div>
-<div class="col"><span class="num">04</span><h3>Livraison</h3><p>Dakar en main propre, et expédition possible vers les autres villes et pays.</p></div>
+<div class="col reveal"><span class="num">01</span><h3>Produits d'origine</h3><p>Marques officielles, boîte scellée, numéro de série vérifiable à la livraison.</p></div>
+<div class="col reveal"><span class="num">02</span><h3>Compatible Afrique de l'Ouest</h3><p>Modèles avec double SIM / eSIM et bandes réseau adaptées au Sénégal.</p></div>
+<div class="col reveal"><span class="num">03</span><h3>Conseil direct</h3><p>Vous parlez à une vraie personne sur WhatsApp, pas à un formulaire.</p></div>
+<div class="col reveal"><span class="num">04</span><h3>Livraison</h3><p>Dakar en main propre, et expédition possible vers les autres villes et pays.</p></div>
 </div>
 </section>
-</div></main>
+</div></section>
+</main>
 
-<footer><div class="wrap">
+<footer id="contact"><div class="wrap">
+<div class="grid-f">
+<div>
 <p class="mark">Saalum Tech</p>
-<p>Dakar, Sénégal · WhatsApp : <a href="https://wa.me/221760149351" data-wa="Bonjour !">+221 76 014 93 51</a></p>
+<p>Boutique tech premium · smartphones, ordinateurs, impression 3D et flocage professionnel.</p>
+</div>
+<div>
+<h4>Navigation</h4>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#boutique">Boutique</a></li>
+<li><a href="#pourquoi">Pourquoi nous</a></li>
+</ul>
+</div>
+<div>
+<h4>Contact</h4>
+<ul>
+<li>Dakar, Sénégal</li>
+<li>Lun – Sam · 9h – 20h</li>
+<li><a href="https://wa.me/221760149351" data-wa="Bonjour !">WhatsApp : +221 76 014 93 51</a></li>
+</ul>
+</div>
+</div>
+<p class="legal">© <span id="year"></span> Saalum Tech. Tous droits réservés.</p>
 </div></footer>
 
 <a class="btn fab" data-wa="Bonjour, je voudrais des informations sur vos produits." href="#" aria-label="Discuter sur WhatsApp">
@@ -250,6 +468,8 @@ const PRODUCTS = [
 // ========================
 
 const wa = t => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t)}`;
+// Lien absolu vers la photo du produit : WhatsApp affiche l'aperçu de l'image dans le message
+const photo = p => new URL(`images/${p.img}`, location.href).href;
 const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 // Illustration de secours si la photo n'est pas encore ajoutée
@@ -270,7 +490,12 @@ function render(cat="Tous"){
   chips.innerHTML=cats.map(c=>`<button class="chip" aria-pressed="${c===cat}" data-c="${c}">${c}</button>`).join('');
   grid.innerHTML=PRODUCTS.filter(p=>cat==="Tous"||p.c===cat).map(p=>{
     const price=p.price?`${p.price.toLocaleString('fr-FR')} ${CURRENCY}`:'Prix sur demande';
-    const msg=`Bonjour, je suis intéressé par le ${p.b} ${p.n}. Quel est le prix et est-il disponible ?`;
+    const msg=
+`Bonjour Saalum Tech,
+je suis intéressé(e) par le ${p.b} ${p.n} (${p.s}).
+Prix affiché : ${price}.
+Photo du produit : ${photo(p)}
+Est-il disponible ? Merci.`;
     return `<article class="card"><div class="ph">${imgTag(p)}</div><div class="body">
       ${p.tag?`<span class="tag">${p.tag}</span>`:''}<span class="brand">${esc(p.b)}</span><h3>${esc(p.n)}</h3>
       <p class="spec">${esc(p.s)}</p><p class="price">${price}</p>
@@ -283,6 +508,16 @@ document.getElementById('heroArt').innerHTML=
   `<div class="frame">${imgTag(PRODUCTS[10])}</div>`+
   `<div class="frame">${imgTag(PRODUCTS[3])}</div>`;
 document.querySelectorAll('[data-wa]').forEach(a=>{a.href=wa(a.dataset.wa);a.target="_blank";a.rel="noopener"});
+document.getElementById('year').textContent=new Date().getFullYear();
+
+// header : ombre au défilement
+const header=document.querySelector('header');
+const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>8);
+onScroll();addEventListener('scroll',onScroll,{passive:true});
+
+// apparition douce des sections
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
