@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dakar Mobile – Smartphones et ordinateurs de marque</title>
+<meta name="description" content="iPhone, Samsung, Google Pixel, MacBook et PC portables neufs et garantis. Commandez directement sur WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0b2540;--mist:#eef2f7;--card:#fff;--sun:#f5b301;--wa:#1faa59;--wa-d:#168a47;--mute:#5b6b80;--line:#d9e0ea}
+*{box-sizing:border-box;margin:0}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--mist);color:var(--ink);line-height:1.5}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.1}
+a{color:inherit}
+.wrap{max-width:1120px;margin:auto;padding:0 20px}
+header{background:var(--ink);color:#fff;position:sticky;top:0;z-index:5}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.3rem;text-decoration:none}
+.logo span{color:var(--sun)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:#fff;font-weight:700;text-decoration:none;padding:12px 20px;border-radius:999px;border:0;cursor:pointer;font-size:1rem;font-family:inherit}
+.btn:hover{background:var(--wa-d)}
+.btn:focus-visible,.chip:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.btn.sm{padding:8px 14px;font-size:.9rem}
+.hero{background:var(--ink);color:#fff;padding:56px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800}
+.hero p{color:#c3d0e0;margin:16px 0 28px;max-width:46ch;font-size:1.1rem}
+.hero .art{display:flex;gap:14px;justify-content:center;align-items:flex-end}
+.hero .art img{width:44%;border-radius:18px;background:#16355a;aspect-ratio:3/4;object-fit:contain}
+.hero .art img:nth-child(2){width:52%;aspect-ratio:4/3}
+.trust{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:28px;color:#c3d0e0;font-size:.95rem}
+.trust b{color:var(--sun)}
+main{padding:48px 0 24px}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:24px}
+.bar h2{font-size:2rem}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:#fff;color:var(--ink);padding:8px 16px;border-radius:999px;font:inherit;font-weight:500;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line)}
+.card .ph{background:#f7f9fc;aspect-ratio:1;display:grid;place-items:center;padding:14px}
+.card img{max-width:100%;max-height:100%;object-fit:contain}
+.card .body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.brand{font-size:.85rem;color:var(--mute);font-weight:500}
+.card h3{font-size:1.15rem}
+.spec{font-size:.9rem;color:var(--mute);flex:1}
+.price{font-weight:700;margin:6px 0 10px}
+.tag{display:inline-block;background:var(--sun);color:var(--ink);font-size:.78rem;font-weight:700;padding:2px 8px;border-radius:6px;width:max-content}
+.why{background:#fff;margin-top:48px;padding:48px 0;border-top:1px solid var(--line)}
+.why .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:20px}
+.why h3{font-size:1.1rem;margin-bottom:4px}
+.why p{color:var(--mute)}
+footer{background:var(--ink);color:#c3d0e0;padding:32px 0;text-align:center}
+footer a{color:#fff}
+.fab{position:fixed;right:18px;bottom:18px;z-index:10;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.hero .art{order:-1}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#">Dakar<span>Mobile</span></a>
+<a class="btn sm" data-wa="Bonjour, je voudrais des informations sur vos produits." href="#">Écrire sur WhatsApp</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+<div>
+<h1>Les derniers smartphones et ordinateurs, livrés chez vous.</h1>
+<p>Appareils neufs, scellés et garantis. Choisissez un modèle, écrivez-nous sur WhatsApp, on vous répond avec le prix et la disponibilité.</p>
+<a class="btn" data-wa="Bonjour, je cherche un téléphone ou un ordinateur. Pouvez-vous m'aider ?" href="#">Discuter sur WhatsApp</a>
+<div class="trust"><span><b>Neuf</b> et scellé</span><span><b>Garantie</b> incluse</span><span><b>Livraison</b> rapide</span><span><b>Paiement</b> à la livraison possible</span></div>
+</div>
+<div class="art" id="heroArt"></div>
+</div></section>
+
+<main><div class="wrap">
+<div class="bar"><h2>Nos produits</h2>
+<div class="chips" id="chips" role="group" aria-label="Filtrer par catégorie"></div></div>
+<div class="grid" id="grid"></div>
+</div>
+
+<section class="why"><div class="wrap">
+<h2>Acheter chez nous</h2>
+<div class="cols">
+<div><h3>Produits d'origine</h3><p>Marques officielles, boîte scellée, numéro de série vérifiable.</p></div>
+<div><h3>Compatible Afrique de l'Ouest</h3><p>Modèles avec double SIM / eSIM et bandes réseau adaptées.</p></div>
+<div><h3>Réponse directe</h3><p>Vous parlez à une vraie personne sur WhatsApp, pas à un formulaire.</p></div>
+<div><h3>Livraison</h3><p>Dakar et expédition possible vers les autres villes et pays.</p></div>
+</div></div></section>
+</main>
+
+<footer><div class="wrap">
+<p>Dakar Mobile · Dakar, Sénégal</p>
+<p>WhatsApp : <a href="https://wa.me/221760149351" data-wa="Bonjour !">+221 76 014 93 51</a></p>
+</div></footer>
+
+<a class="btn fab" data-wa="Bonjour, je voudrais des informations sur vos produits." href="#" aria-label="Discuter sur WhatsApp">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 .9-2.300c.2-.3.5-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 1.900c.1.200.1.400 0 .5l-.4.600c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.100 1 2 1.300 2.300 1.400.3.100.4.100.6-.1l.8-1c.2-.2.400-.2.600-.1l1.800.9c.3.100.5.200.5.300.1.200.1.800-.1 1.400z"/></svg>
+WhatsApp</a>
+
+<script>
+// ====== À MODIFIER ======
+const WHATSAPP = "221760149351";            // votre numéro, sans + ni espaces
+const CURRENCY = "FCFA";
+// price: mettez un nombre (ex. 650000) ou laissez null pour "Prix sur demande"
+// img: placez la photo dans le dossier images/ avec ce nom exact
+const PRODUCTS = [
+ {c:"Téléphones",b:"Apple",n:"iPhone 17 Pro Max",s:"6,9″ OLED · puce A19 Pro · 256 Go",img:"iphone-17-pro-max.jpg",price:null,tag:"Nouveau"},
+ {c:"Téléphones",b:"Apple",n:"iPhone 17",s:"6,3″ OLED 120 Hz · A19 · 256 Go",img:"iphone-17.jpg",price:null},
+ {c:"Téléphones",b:"Apple",n:"iPhone Air",s:"Ultra-fin · 6,5″ OLED · eSIM",img:"iphone-air.jpg",price:null},
+ {c:"Téléphones",b:"Samsung",n:"Galaxy S26 Ultra",s:"6,9″ AMOLED · S Pen · zoom 100x",img:"galaxy-s26-ultra.jpg",price:null,tag:"Nouveau"},
+ {c:"Téléphones",b:"Samsung",n:"Galaxy Z Fold7",s:"Pliable 8″ · ultra-fin · Galaxy AI",img:"galaxy-z-fold7.jpg",price:null},
+ {c:"Téléphones",b:"Samsung",n:"Galaxy Z Flip7",s:"Pliable compact · écran externe 4,1″",img:"galaxy-z-flip7.jpg",price:null},
+ {c:"Téléphones",b:"Google",n:"Pixel 10 Pro",s:"6,3″ OLED · Tensor G5 · IA Gemini",img:"pixel-10-pro.jpg",price:null},
+ {c:"Téléphones",b:"Xiaomi",n:"Xiaomi 15T Pro",s:"Optique Leica · charge rapide 90 W",img:"xiaomi-15t-pro.jpg",price:null},
+ {c:"Téléphones",b:"Tecno",n:"Tecno Camon 40 Pro",s:"Grande batterie · caméra 50 MP",img:"tecno-camon.jpg",price:null},
+ {c:"Téléphones",b:"Infinix",n:"Infinix Note 50 Pro",s:"AMOLED 120 Hz · charge 45 W",img:"infinix-note.jpg",price:null},
+ {c:"Ordinateurs",b:"Apple",n:"MacBook Air 13″ M4",s:"Puce M4 · 16 Go · SSD 256 Go",img:"macbook-air-m4.jpg",price:null,tag:"Populaire"},
+ {c:"Ordinateurs",b:"Apple",n:"MacBook Pro 14″ M5",s:"Puce M5 · écran Liquid Retina XDR",img:"macbook-pro-m5.jpg",price:null},
+ {c:"Ordinateurs",b:"Dell",n:"Dell XPS 14",s:"Intel Core Ultra · OLED · 32 Go",img:"dell-xps-14.jpg",price:null},
+ {c:"Ordinateurs",b:"HP",n:"HP Spectre x360",s:"2-en-1 tactile · Core Ultra 7",img:"hp-spectre.jpg",price:null},
+ {c:"Ordinateurs",b:"Lenovo",n:"Lenovo ThinkPad X1 Carbon",s:"Ultra-léger · pro · 32 Go",img:"thinkpad-x1.jpg",price:null},
+ {c:"Ordinateurs",b:"Asus",n:"Asus Zenbook 14 OLED",s:"Core Ultra · OLED 120 Hz · IA",img:"zenbook-14.jpg",price:null},
+ {c:"Accessoires",b:"Apple",n:"AirPods Pro 3",s:"Réduction de bruit active",img:"airpods-pro.jpg",price:null},
+ {c:"Accessoires",b:"Apple",n:"Apple Watch Series 11",s:"Suivi santé · GPS",img:"apple-watch.jpg",price:null},
+ {c:"Accessoires",b:"Samsung",n:"Galaxy Buds 3 Pro",s:"Son haute qualité · ANC",img:"buds-3-pro.jpg",price:null},
+];
+// ========================
+
+const wa = t => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t)}`;
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+// Illustration de secours si la photo n'est pas encore ajoutée
+function fallback(p){
+  const phone = p.c !== "Ordinateurs" && p.c !== "Accessoires";
+  const shape = phone
+    ? '<rect x="70" y="20" width="100" height="200" rx="18" fill="#0b2540"/><rect x="78" y="32" width="84" height="170" rx="8" fill="#2a5b94"/>'
+    : p.c==="Ordinateurs"
+    ? '<rect x="40" y="60" width="160" height="100" rx="8" fill="#0b2540"/><rect x="48" y="68" width="144" height="84" rx="4" fill="#2a5b94"/><path d="M20 170h200l-14 16H34z" fill="#9aa9bd"/>'
+    : '<circle cx="120" cy="120" r="60" fill="#0b2540"/><circle cx="120" cy="120" r="44" fill="#2a5b94"/>';
+  return 'data:image/svg+xml;utf8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">${shape}<text x="120" y="232" font-size="14" text-anchor="middle" fill="#5b6b80" font-family="sans-serif">${p.n}</text></svg>`);
+}
+const imgTag = (p,cls="") => `<img ${cls} src="images/${p.img}" alt="${esc(p.b+' '+p.n)}" loading="lazy" onerror="this.onerror=null;this.src='${fallback(p).replace(/'/g,"%27")}'">`;
+
+const grid=document.getElementById('grid'), chips=document.getElementById('chips');
+const cats=["Tous",...new Set(PRODUCTS.map(p=>p.c))];
+function render(cat="Tous"){
+  chips.innerHTML=cats.map(c=>`<button class="chip" aria-pressed="${c===cat}" data-c="${c}">${c}</button>`).join('');
+  grid.innerHTML=PRODUCTS.filter(p=>cat==="Tous"||p.c===cat).map(p=>{
+    const price=p.price?`${p.price.toLocaleString('fr-FR')} ${CURRENCY}`:'Prix sur demande';
+    const msg=`Bonjour, je suis intéressé par le ${p.b} ${p.n}. Quel est le prix et est-il disponible ?`;
+    return `<article class="card"><div class="ph">${imgTag(p)}</div><div class="body">
+      ${p.tag?`<span class="tag">${p.tag}</span>`:''}<span class="brand">${esc(p.b)}</span><h3>${esc(p.n)}</h3>
+      <p class="spec">${esc(p.s)}</p><p class="price">${price}</p>
+      <a class="btn sm" href="${wa(msg)}" target="_blank" rel="noopener">Commander sur WhatsApp</a></div></article>`}).join('');
+}
+chips.addEventListener('click',e=>{const c=e.target.dataset.c;if(c)render(c)});
+render();
+document.getElementById('heroArt').innerHTML=imgTag(PRODUCTS[0])+imgTag(PRODUCTS[10])+imgTag(PRODUCTS[3]);
+document.querySelectorAll('[data-wa]').forEach(a=>{a.href=wa(a.dataset.wa);a.target="_blank";a.rel="noopener"});
+</script>
+</body>
+</html>
