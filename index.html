@@ -99,7 +99,12 @@ header .wrap{display:flex;align-items:center;gap:24px;height:72px}
     repeating-linear-gradient(115deg, rgba(255,255,255,.028) 0 1px, transparent 1px 7px),
     radial-gradient(700px 320px at 80% 110%, rgba(74,107,93,.28), transparent 65%)}
 .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
-.hero-mbanner{display:none}
+.hero-mbanner{
+  grid-column:1 / -1;display:block;width:100%;aspect-ratio:1584/672;object-fit:cover;object-position:center;
+  border-radius:8px;border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 30px 70px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.18);
+  margin-bottom:34px}
+.hero-copy{min-width:0}
 .hero h1{font-size:clamp(2.4rem,5vw,4.2rem);font-weight:600}
 .hero h1 em{font-style:italic;color:#BFD3C8}
 .hero p.lead{color:#C6D2E2;margin:20px 0 30px;max-width:47ch;font-size:1.06rem}
@@ -292,13 +297,15 @@ footer .legal{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255
   .mnav a:last-of-type{border-bottom:0}
   .mnav .btn{width:100%;margin-top:14px;min-height:50px}
 
-  .hero{padding:34px 0 44px;background:linear-gradient(165deg,#1A2B4C 0%,#101D36 62%,#16294a 100%)}
+  .hero{padding:22px 0 34px;background:linear-gradient(165deg,#1A2B4C 0%,#101D36 62%,#16294a 100%)}
   .hero::before{display:none}
   .hero::after{background:
     repeating-linear-gradient(115deg, rgba(255,255,255,.026) 0 1px, transparent 1px 8px),
     radial-gradient(560px 280px at 85% 108%, rgba(74,107,93,.3), transparent 62%)}
   .hero .wrap{grid-template-columns:1fr;gap:22px}
-  .hero-mbanner{display:none}
+  .hero-mbanner{grid-column:auto;margin-bottom:0;aspect-ratio:1584/672;object-fit:cover;object-position:center;
+    border-radius:8px;border:1px solid rgba(255,255,255,.16);
+    box-shadow:0 22px 46px rgba(0,0,0,.45)}
   .hero .art{display:none}
   .hero .eyebrow{margin-bottom:10px;font-size:.7rem;letter-spacing:.26em}
   .hero h1{font-size:clamp(1.95rem,8.2vw,2.6rem);line-height:1.14}
@@ -308,7 +315,7 @@ footer .legal{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255
   .trust{gap:8px;margin-top:22px}
   .trust span{font-size:.79rem;padding:8px 12px;flex:1 1 auto;text-align:center}
 
-  .hero-mcar{display:block;margin-top:26px}
+  .hero-mcar{display:block;margin-top:22px}
   .hero-mcar .rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 18px 14px;margin:0 -18px}
   .hero-mcar .rail::-webkit-scrollbar{display:none}
@@ -427,7 +434,8 @@ footer .legal{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255
   <a class="btn" data-wa="Bonjour, je voudrais des informations sur vos produits." href="#">Écrire sur WhatsApp</a>
 </nav></header>
 <section class="hero" aria-label="Accueil"><div class="wrap">
-<div>
+<img class="hero-mbanner" src="images/banner_Saaluma_tech.jpg" alt="Saalum Tech – boutique tech premium à Dakar : smartphones, ordinateurs, impression 3D et flocage" width="1584" height="672" fetchpriority="high" decoding="async">
+<div class="hero-copy">
 <span class="eyebrow light">Boutique premium · Dakar</span>
 <h1>Les derniers smartphones et ordinateurs, <em>livrés chez vous.</em></h1>
 <p class="lead">Appareils neufs, scellés et garantis. Choisissez un modèle, écrivez-nous sur WhatsApp : nous répondons avec le prix, la disponibilité et un conseil personnalisé.</p>
@@ -611,30 +619,48 @@ const PRODUCTS = [
 // ========================
 
 const wa = t => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t)}`;
-// Lien absolu vers la photo du produit (secours si le partage natif n'est pas dispo)
+// Lien absolu vers la photo du produit
 const photo = p => new URL(`images/${p.img}`, location.href).href;
 const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const msgFor = p =>`Bonjour Saalum Tech, je suis intéressé(e) par le ${p.b} ${p.n} (${p.s}). Est-il disponible ?`;
 
-// Commande : sur mobile, on PARTAGE la photo du produit (elle part dans le chat WhatsApp).
-// Sinon, on retombe sur un message texte contenant le lien de la photo.
-async function commander(ev, p){
-  const msg=`Bonjour Saalum Tech, je suis intéressé(e) par le ${p.b} ${p.n} (${p.s}). Est-il disponible ?`;
+async function fetchFile(p){
   const url=photo(p);
-  if(!(navigator.canShare && window.File)) return; // laisse le lien <a> faire son travail
+  const r=await fetch(url);
+  if(!r.ok) throw 0;
+  const blob=await r.blob();
+  const type=blob.type||'image/jpeg';
+  const ext=(type.split('/')[1]||'jpg').replace('jpeg','jpg').replace('svg+xml','png');
+  return {file:new File([blob], `${p.img.replace(/\.[^.]+$/, '')}.${ext}`, {type}), url};
+}
+
+// Commande : la photo du produit doit arriver DANS le chat WhatsApp, quel que soit le support.
+// 1) Android / iOS / Edge desktop : partage natif de fichier -> la photo se joint au message.
+// 2) Autres navigateurs : on copie l'image dans le presse-papiers, WhatsApp Web permet de
+//    la coller (Ctrl+V) dans la conversation ouverte par le lien.
+async function commander(ev, p){
+  const msg=msgFor(p);
+  const supportsFiles = navigator.canShare && window.File && window.fetch;
+  if(!supportsFiles){      // desktop sans partage de fichiers : lien + image copiée
+    try{
+      const {file,url}=await fetchFile(p);
+      ev.preventDefault();
+      if(navigator.clipboard && window.ClipboardItem){
+        await navigator.clipboard.write([new ClipboardItem({[file.type]:file})]);
+      }
+      window.open(wa(msg+`\n\nPhoto du produit : ${url}`),'_blank','noopener');
+      return;
+    }catch(_){ return; }   // echec : le lien <a> gere
+  }
   ev.preventDefault();
   try{
-    const r=await fetch(url);
-    if(!r.ok) throw 0;
-    const blob=await r.blob();
-    const type=blob.type||'image/jpeg';
-    const ext=(type.split('/')[1]||'jpg').replace('jpeg','jpg');
-    const file=new File([blob], `${p.img.replace(/\.[^.]+$/, '')}.${ext}`, {type});
+    const {file,url}=await fetchFile(p);
     if(navigator.canShare({files:[file]})){
-      await navigator.share({files:[file], text:msg});
+      await navigator.share({files:[file], text:msg+`\n${url}`});
       return;
     }
   }catch(_){}
-  window.location.href=wa(msg+`\nPhoto : ${url}`);
+  window.open(wa(msg+`\n\nPhoto du produit : ${photo(p)}`),'_blank','noopener');
 }
 
 // Illustration de secours si la photo n'est pas encore ajoutée
@@ -658,7 +684,7 @@ function render(cat="Tous"){
     return `<article class="card"><div class="ph">${imgTag(p)}</div><div class="body">
       ${p.tag?`<span class="tag">${p.tag}</span>`:''}<span class="brand">${esc(p.b)}</span><h3>${esc(p.n)}</h3>
       <p class="spec">${esc(p.s)}</p><p class="price">${price}</p>
-      <a class="btn sm" href="${wa(`Bonjour Saalum Tech, je suis intéressé(e) par le ${p.b} ${p.n}. Est-il disponible ?`)}" onclick="commander(event, PRODUCTS[${i}])" target="_blank" rel="noopener">Commander sur WhatsApp</a></div></article>`}).join('');
+      <a class="btn sm" href="${wa(msgFor(p))}" onclick="commander(event, PRODUCTS[${i}])" target="_blank" rel="noopener">Commander sur WhatsApp</a></div></article>`}).join('');
 }
 chips.addEventListener('click',e=>{const c=e.target.dataset.c;if(c)render(c)});
 render();
@@ -672,7 +698,7 @@ document.getElementById('heroCar').innerHTML=
   '<div class="rail">'+
     [0,10,3,1,4].map(i=>{
       const p=PRODUCTS[i];
-      return `<a class="item" href="${wa(`Bonjour Saalum Tech, je suis intéressé(e) par le ${p.b} ${p.n}. Est-il disponible ?`)}" onclick="commander(event, PRODUCTS[${i}])" target="_blank" rel="noopener">
+      return `<a class="item" href="${wa(msgFor(p))}" onclick="commander(event, PRODUCTS[${i}])" target="_blank" rel="noopener">
         <img src="images/${p.img}" alt="${esc(p.b+' '+p.n)}" loading="lazy" onerror="this.onerror=null;this.src='${fallback(p).replace(/'/g,"%27")}'">
         <b>${esc(p.n)}</b><small>${esc(p.b)} · Commander</small></a>`;
     }).join('')+
