@@ -630,27 +630,21 @@ async function fetchFile(p){
   return {file:new File([blob], `${p.img.replace(/\.[^.]+$/, '')}.${ext}`, {type}), url};
 }
 
-// Commande : redirige directement vers le WhatsApp du vendeur avec la photo du produit.
-// 1) Android / iOS : partage natif du fichier -> WhatsApp reçoit l'image en pièce jointe.
-// 2) Desktop : on ouvre wa.me (conversation vendeur) ET on copie l'image dans le presse-papiers
-//    pour un collage immédiat (Ctrl+V) ; le message contient déjà le lien de la photo.
+// Commande : ouvre DIRECTEMENT la discussion WhatsApp du vendeur (wa.me).
+// En parallèle, la photo du produit est copiée dans le presse-papiers pour être
+// collée (Ctrl+V) dans la conversation ; le message contient aussi le lien de la photo.
 async function commander(ev, p){
   const msg=msgFor(p);
   ev.preventDefault();
-  const canFiles = navigator.canShare && window.File && window.fetch;
-  try{
-    const {file,url}=await fetchFile(p);
-    if(canFiles && navigator.canShare({files:[file]})){
-      await navigator.share({files:[file], text:msg});
-      return;
-    }
-    if(navigator.clipboard && window.ClipboardItem){
-      try{ await navigator.clipboard.write([new ClipboardItem({[file.type]:file})]); }catch(_){}
-    }
-    window.open(wa(msg+`\n\nPhoto : ${url}`),'_blank','noopener');
-  }catch(_){
-    window.open(wa(msg+`\n\nPhoto : ${photo(p)}`),'_blank','noopener');
+  const url=photo(p);
+  // Copie de l'image (best effort, n'attend pas pour ouvrir WhatsApp)
+  if(navigator.clipboard && window.ClipboardItem && window.fetch){
+    fetchFile(p).then(({file})=>
+      navigator.clipboard.write([new ClipboardItem({[file.type]:file})])
+    ).catch(()=>{});
   }
+  // Ouverture immédiate et directe de la discussion du vendeur
+  window.location.href = wa(msg+`\n\nPhoto : ${url}`);
 }
 
 // Illustration de secours si la photo n'est pas encore ajoutée
